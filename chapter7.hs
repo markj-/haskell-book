@@ -5,11 +5,15 @@ tensDigit x = d
     where xLast = x `div` 10
           d     = xLast `mod` 10
 
-tensDigit' :: Integral p => p -> (p, p)
-tensDigit' x = x `divMod` 10
+tensDigit' :: Integral a => a -> a
+tensDigit' x = snd d
+    where xLast = x `divMod` 10
+          d     = fst xLast `divMod` 10
 
 hunsD :: Integral a => a -> a
-hunsD x = x `div` 100
+hunsD x = d
+    where xLast = x `div` 100
+          d     = xLast `mod` 10
 
 foldBool :: a -> a -> Bool -> a
 foldBool x y z = case z of
