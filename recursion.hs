@@ -16,3 +16,9 @@ incTimes times n = applyTimes times (+1) n
 -- 1 + 1 + 1 + 1 + 1 + (applyTimes 0 (+1) 5)
 -- 1 + 1 + 1 + 1 + 1 + 5
 -- 10
+
+fibonacci :: Integral a => a -> a
+fibonacci 0 = 0
+fibonacci 1 = 1
+fibonacci n =
+    fibonacci (n - 1) + fibonacci (n - 2)
