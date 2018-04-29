@@ -17,13 +17,13 @@ hunsD x = d
 
 foldBool :: a -> a -> Bool -> a
 foldBool x y z = case z of
-    True  -> x
-    False -> y
+    False  -> x
+    True -> y
 
 foldBool' :: a -> a -> Bool -> a
 foldBool' x y z
-    | z == True  = x
-    | z == False = y
+    | z == False  = x
+    | z == True = y
 
 g :: (a -> b) -> (a, c) -> (b, c)
 g f (a, c) = (f a, c)
